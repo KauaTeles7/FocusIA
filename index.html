@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusIA | Assistente de Produtividade</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="background-grid"></div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">
+      Focus<span>IA</span>
+    </div>
+    <nav>
+      <button class="menu-btn active" data-tab="dashboard">📊 Dashboard</button>
+      <button class="menu-btn" data-tab="analysis">📈 Evolução</button>
+      <button class="menu-btn" data-tab="focus">⏱️ Modo Foco</button>
+      <button class="menu-btn" data-tab="assistant">🤖 IA Assistente</button>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <!-- TOPO -->
+    <header class="topbar">
+      <div>
+        <h1>Painel Inteligente</h1>
+        <p>IA de produtividade, foco e bem-estar digital</p>
+      </div>
+      <div class="user-box">
+        🟢 IA Online
+      </div>
+    </header>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="dashboard-grid tab-content">
+      <!-- ANÁLISE -->
+      <div class="card big-card">
+        <div class="card-top">
+          <h2>🧠 Análise Inteligente</h2>
+          <span class="status-live"></span>
+        </div>
+        <form id="formulario">
+          <div class="input-group">
+            <div class="input-box">
+              <label>📱 Tempo em redes sociais</label>
+              <select id="horas">
+                <option value="1">Menos de 1h</option>
+                <option value="2">1 a 3h</option>
+                <option value="3">4 a 6h</option>
+                <option value="4">Mais de 6h</option>
+              </select>
+            </div>
+            <div class="input-box">
+              <label>🎯 Dificuldade de foco</label>
+              <select id="concentracao">
+                <option value="1">Nunca</option>
+                <option value="2">Às vezes</option>
+                <option value="3">Frequentemente</option>
+                <option value="4">Sempre</option>
+              </select>
+            </div>
+            <div class="input-box">
+              <label>😰 Ansiedade digital</label>
+              <select id="ansiedade">
+                <option value="1">Nunca</option>
+                <option value="2">Às vezes</option>
+                <option value="3">Frequentemente</option>
+                <option value="4">Sempre</option>
+              </select>
+            </div>
+            <div class="input-box">
+              <label>🌙 Uso antes de dormir</label>
+              <select id="sono">
+                <option value="1">Nunca</option>
+                <option value="2">Às vezes</option>
+                <option value="3">Quase sempre</option>
+                <option value="4">Sempre</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="main-button">✨ Gerar plano inteligente</button>
+        </form>
+      </div>
+
+      <!-- SCORE -->
+      <div class="card score-card">
+        <small>🎯 Score Atual</small>
+        <h1 id="score">0%</h1>
+        <div class="progress-container">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <p id="status">Aguardando análise...</p>
+      </div>
+
+      <!-- EVOLUÇÃO -->
+      <div class="card">
+        <small>📈 Evolução</small>
+        <h2 id="evolucao">+0%</h2>
+        <p>Comparação com última análise.</p>
+      </div>
+
+      <!-- STREAK -->
+      <div class="card">
+        <small>🔥 Streak</small>
+        <h2 id="streak">0 dias</h2>
+        <p>Dias consecutivos focando.</p>
+      </div>
+    </section>
+
+    <!-- EVOLUÇÃO -->
+    <section id="analysis" class="card analysis-card tab-content hidden-tab">
+      <h2>📋 Diagnóstico da IA</h2>
+      <p id="mensagem">Faça sua primeira análise no Dashboard.</p>
+      <ul id="dicas"></ul>
+    </section>
+
+    <!-- MODO FOCO -->
+    <section id="focus" class="focus-grid tab-content hidden-tab">
+      <div class="card focus-card">
+        <div class="focus-header">
+          <div>
+            <small>⏱️ Modo Foco</small>
+            <h2>Pomodoro Inteligente</h2>
+          </div>
+          <div class="focus-status">🎯 Ativo</div>
+        </div>
+        <h1 id="timer">25:00</h1>
+        <div class="timer-actions">
+          <button id="startBtn">▶ Iniciar</button>
+          <button id="pauseBtn">⏸ Pausar</button>
+          <button id="resetBtn">🔄 Resetar</button>
+        </div>
+      </div>
+      <div class="card">
+        <small>🎯 Metas Inteligentes</small>
+        <div id="metas" class="goals-list"></div>
+      </div>
+    </section>
+
+    <!-- CHAT IA -->
+    <section id="assistant" class="card ai-chat tab-content hidden-tab">
+      <small>🤖 Assistente IA</small>
+      <div id="chatBox" class="chat-box">
+        <div class="ai-message">
+          🤖 <strong>FocusIA</strong><br>
+          Olá! Sou sua assistente de produtividade. Como posso ajudar você hoje?
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="userInput" placeholder="Digite sua mensagem... (ou /ajuda para comandos)">
+        <button id="sendBtn">📤 Enviar</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="ai.js"></script>
+  <script src="storage.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
