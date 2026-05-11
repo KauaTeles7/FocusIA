@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FocusIA</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="gradient gradient-1"></div>
+  <div class="gradient gradient-2"></div>
+
+  <main class="container">
+
+    <section class="hero">
+
+      <div class="badge">
+        Inteligência Artificial aplicada ao Bem-estar Digital
+      </div>
+
+      <h1>
+        Focus<span>IA</span>
+      </h1>
+
+      <p>
+        Plataforma inteligente desenvolvida para identificar sinais de dependência digital,
+        distração excessiva e impactos emocionais causados pelo uso contínuo das redes sociais.
+      </p>
+
+    </section>
+
+    <section class="dashboard">
+
+      <div class="dashboard-header">
+
+        <div>
+          <h2>Análise Inteligente</h2>
+          <p>Sistema de monitoramento comportamental baseado em IA.</p>
+        </div>
+
+        <div class="online-status">
+          <div class="dot"></div>
+          IA Online
+        </div>
+
+      </div>
+
+      <form id="formulario">
+
+        <div class="input-box">
+          <label>Tempo diário em redes sociais</label>
+
+          <select id="horas">
+            <option value="1">Menos de 1 hora</option>
+            <option value="2">1 a 3 horas</option>
+            <option value="3">4 a 6 horas</option>
+            <option value="4">Mais de 6 horas</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <label>Dificuldade de concentração</label>
+
+          <select id="concentracao">
+            <option value="1">Nunca</option>
+            <option value="2">Às vezes</option>
+            <option value="3">Frequentemente</option>
+            <option value="4">Sempre</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <label>Ansiedade após redes sociais</label>
+
+          <select id="ansiedade">
+            <option value="1">Nunca</option>
+            <option value="2">Às vezes</option>
+            <option value="3">Frequentemente</option>
+            <option value="4">Sempre</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <label>Uso do celular antes de dormir</label>
+
+          <select id="sono">
+            <option value="1">Nunca</option>
+            <option value="2">Às vezes</option>
+            <option value="3">Quase sempre</option>
+            <option value="4">Sempre</option>
+          </select>
+        </div>
+
+        <button type="submit">
+          Executar análise da IA
+        </button>
+
+      </form>
+
+      <section id="resultado" class="resultado hidden">
+
+        <div class="top-result">
+
+          <div>
+            <small>Score de Saúde Digital</small>
+            <h2 id="score">0%</h2>
+          </div>
+
+          <div id="status" class="status">
+            Saudável
+          </div>
+
+        </div>
+
+        <div class="bar-container">
+          <div id="bar" class="bar"></div>
+        </div>
+
+        <div class="cards-grid">
+
+          <div class="mini-card">
+            <small>Produtividade</small>
+            <h3 id="produtividade">0%</h3>
+          </div>
+
+          <div class="mini-card">
+            <small>Bem-estar</small>
+            <h3 id="bemestar">0%</h3>
+          </div>
+
+          <div class="mini-card">
+            <small>Dependência Digital</small>
+            <h3 id="dependencia">0%</h3>
+          </div>
+
+        </div>
+
+        <div class="analysis-box">
+          <h3>Análise da IA</h3>
+          <p id="mensagem"></p>
+        </div>
+
+        <div class="tips-box">
+          <h3>Recomendações Inteligentes</h3>
+          <ul id="dicas"></ul>
+        </div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
